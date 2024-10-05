@@ -9,17 +9,29 @@ func _control_interacted() -> void:
 
 var finishing: bool = false
 
-func _target_triggered() -> void:
-	if finishing:
-		return
-
+func _are_all_targets_triggered() -> bool:
 	for target in get_tree().get_nodes_in_group("targets"):
 		if not target.was_triggered:
-			return
+			return false
+	return true
+
+func _target_triggered() -> void:
+	if finishing or not _are_all_targets_triggered():
+		return
 
 	finishing = true
 
 	$AnimationPlayer.play("finish")
+
+func _launcher_finished():
+	for launcher in get_tree().get_nodes_in_group("launchers"):
+		if not launcher.are_all_finished:
+			return
+	
+	if _are_all_targets_triggered():
+		return
+
+	_control_interacted()
 
 func _ready() -> void:
 	%fader.show()
@@ -27,6 +39,8 @@ func _ready() -> void:
 		control.interacted.connect(_control_interacted)
 	for target in get_tree().get_nodes_in_group("targets"):
 		target.triggered.connect(_target_triggered)
+	for launcher in get_tree().get_nodes_in_group("launchers"):
+		launcher.all_finished.connect(_launcher_finished)
 	%levelLabel.text = get_parent().scene_file_path
 	$AnimationPlayer.play("start")
 

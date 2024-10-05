@@ -13,8 +13,11 @@ func _ready() -> void:
 	$Polygon2D.color = untriggered_color
 
 func _on_ball_enter(ball: Creature) -> void:
-	ball.stop()
+	if was_triggered:
+		return
+
 	was_triggered = true
+	ball.stop()
 	triggered.emit()
 	$Polygon2D.color = triggered_color
 

@@ -27,14 +27,15 @@ func _ready() -> void:
 	reset()
 	add_to_group("Launchers")
 
-signal interacted
+var are_all_finished: bool = false
+signal all_finished
 
 func _on_one_finished() -> void:
 	for c in creatures:
 		if not c.is_finished:
 			return
-	#interacted.emit()
-	$resetTimer.start(1)
+	are_all_finished = true
+	all_finished.emit()
 
 func _start_one():
 	just_reset = false
@@ -52,7 +53,7 @@ func start():
 var just_reset: bool = false
 
 func reset():
-	$resetTimer.stop()
+	are_all_finished = false
 	if just_reset:
 		return
 
@@ -72,7 +73,3 @@ func _on_button_pressed() -> void:
 
 func _on_timer_timeout() -> void:
 	_start_one()
-
-
-func _on_reset_timer_timeout() -> void:
-	interacted.emit()

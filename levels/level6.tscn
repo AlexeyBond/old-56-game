@@ -1,0 +1,60 @@
+[gd_scene load_steps=7 format=3 uid="uid://cokt5x3wjg6q0"]
+
+[ext_resource type="PackedScene" uid="uid://c5y8xtt503vkd" path="res://level.tscn" id="1_ntv32"]
+[ext_resource type="PackedScene" uid="uid://ch8pb4urrr1vc" path="res://launcher.tscn" id="2_fy0ij"]
+[ext_resource type="PackedScene" uid="uid://b6qc48apgjlp2" path="res://line.tscn" id="3_vtwe4"]
+[ext_resource type="PackedScene" uid="uid://efcmsbqcv7oy" path="res://element-plus1.tscn" id="4_fbh3p"]
+[ext_resource type="PackedScene" uid="uid://dksl8faj2l0tc" path="res://element_target.tscn" id="5_kmo5e"]
+[ext_resource type="PackedScene" uid="uid://dfjq0ivgx6v18" path="res://element-plus-toggle.tscn" id="6_nhh6e"]
+
+[node name="Level" type="Node2D"]
+
+[node name="Level" parent="." instance=ExtResource("1_ntv32")]
+next_level = "res://levels/level3.tscn"
+
+[node name="Launcher" parent="." instance=ExtResource("2_fy0ij")]
+position = Vector2(600, 200)
+
+[node name="Launcher2" parent="." instance=ExtResource("2_fy0ij")]
+position = Vector2(900, 200)
+
+[node name="Line" parent="." instance=ExtResource("3_vtwe4")]
+position = Vector2(200, 540)
+max_num = 14
+
+[node name="Element-plus3" parent="Line" instance=ExtResource("4_fbh3p")]
+position = Vector2(501, 0)
+offset = -2
+
+[node name="Element-plus6" parent="Line" instance=ExtResource("4_fbh3p")]
+position = Vector2(700, 1)
+
+[node name="Element-plus8" parent="Line" instance=ExtResource("4_fbh3p")]
+position = Vector2(1302, 3)
+offset = -2
+
+[node name="Element-plus10" parent="Line" instance=ExtResource("4_fbh3p")]
+position = Vector2(1197, -2)
+offset = -1
+
+[node name="ElementTarget" parent="Line" instance=ExtResource("5_kmo5e")]
+position = Vector2(299, -3)
+
+[node name="ElementTarget2" parent="Line" instance=ExtResource("5_kmo5e")]
+position = Vector2(897, 1)
+
+[node name="Element-plus2" parent="Line" instance=ExtResource("6_nhh6e")]
+position = Vector2(199, 0)
+offsets = Array[int]([2, -2])
+
+[node name="Element-plus7" parent="Line" instance=ExtResource("6_nhh6e")]
+position = Vector2(598, 0)
+offsets = Array[int]([4, 1])
+
+[node name="Element-plus9" parent="Line" instance=ExtResource("6_nhh6e")]
+position = Vector2(999, -4)
+offsets = Array[int]([3, -4])
+
+[node name="Element-plus5" parent="Line" instance=ExtResource("6_nhh6e")]
+position = Vector2(101, -1)
+offsets = Array[int]([4, 3])

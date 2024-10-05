@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://launcher.gd" id="1_eo5x2"]
 [ext_resource type="Theme" uid="uid://cahi3i7q4ygis" path="res://theme.tres" id="2_1buya"]
 
-[node name="Launcher" type="Node2D" groups=["controls", "resettable"]]
+[node name="Launcher" type="Node2D" groups=["launchers", "resettable"]]
 script = ExtResource("1_eo5x2")
 
 [node name="Button" type="Button" parent="."]
@@ -12,15 +12,10 @@ offset_top = 64.0
 offset_right = 23.0
 offset_bottom = 95.0
 theme = ExtResource("2_1buya")
-text = "Start
-"
+text = "V"
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
 
-[node name="resetTimer" type="Timer" parent="."]
-one_shot = true
-
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="timeout" from="resetTimer" to="." method="_on_reset_timer_timeout"]
