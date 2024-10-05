@@ -9,7 +9,7 @@
 [node name="Level0" type="Node2D"]
 
 [node name="Level" parent="." instance=ExtResource("1_lyurm")]
-next_level = "res://levels/level2.tscn"
+next_level = "res://levels/level3.tscn"
 
 [node name="Launcher" parent="." instance=ExtResource("2_afq8t")]
 position = Vector2(400, 200)

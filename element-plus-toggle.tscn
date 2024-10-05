@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://dfjq0ivgx6v18"]
+
+[ext_resource type="Script" path="res://element_add_toggle.gd" id="1_mj7k7"]
+[ext_resource type="Theme" uid="uid://cahi3i7q4ygis" path="res://theme.tres" id="2_pl44c"]
+[ext_resource type="PackedScene" uid="uid://bgum3xi7vqish" path="res://element_mover.tscn" id="3_bh8ex"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_52fqf"]
+size = Vector2(45, 46)
+
+[node name="Element-plus-toggle" type="Area2D" groups=["resettable"]]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_mj7k7")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(0, -21)
+color = Color(0.466181, 0.466181, 0.466181, 1)
+antialiased = true
+polygon = PackedVector2Array(-23, -48, -15, 0, 15, 0, 23, -48)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -44)
+shape = SubResource("RectangleShape2D_52fqf")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -33.0
+offset_top = -85.0
+offset_right = 33.0
+theme = ExtResource("2_pl44c")
+theme_override_font_sizes/font_size = 10
+text = "+1
+-1"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="center" type="Node2D" parent="."]
+position = Vector2(0, -67)
+
+[node name="ElementMover" parent="." instance=ExtResource("3_bh8ex")]

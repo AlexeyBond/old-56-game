@@ -14,10 +14,11 @@ func _kill_tween() -> void:
 		tw.kill()
 		tw = null
 
-func _recreate_tween() -> void:
+func _recreate_tween(connect: bool = true) -> void:
 	_kill_tween()
 	tw = get_tree().create_tween()
-	tw.finished.connect(_on_finished)
+	if connect:
+		tw.finished.connect(_on_finished)
 
 func start_fall():
 	_recreate_tween()
@@ -33,7 +34,7 @@ func start_transition(to_pos: Vector2) -> void:
 		self, "global_position:x", (global_position.x + to_pos.x) / 2, .5
 	).set_trans(Tween.TRANS_LINEAR)
 	tw.parallel().tween_property(
-		self, "global_position:y", to_pos.y - 100, .5
+		self, "global_position:y", to_pos.y - maxf(100, absf(global_position.x - to_pos.x)), .5
 	).set_custom_interpolator(func(x): return 1.0 - pow(1.0 - x, 2))
 
 	tw.tween_property(
@@ -51,9 +52,10 @@ func start_transition(to_pos: Vector2) -> void:
 
 func stop():
 	_kill_tween()
+	_on_finished()
 
 func reset() -> void:
-	_recreate_tween()
+	_recreate_tween(false)
 	global_position = initial_gp + Vector2(0, -500)
 	tw.tween_property(
 		self, "global_position", initial_gp, .5 + 0.2 * index

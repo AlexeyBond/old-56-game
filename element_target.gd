@@ -22,4 +22,4 @@ signal triggered
 
 func reset() -> void:
 	$Polygon2D.color = untriggered_color
-	was_triggered = true
+	was_triggered = false

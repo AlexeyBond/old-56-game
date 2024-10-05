@@ -1,0 +1,30 @@
+[gd_scene load_steps=7 format=3 uid="uid://c4in76xb4qtlu"]
+
+[ext_resource type="PackedScene" uid="uid://c5y8xtt503vkd" path="res://level.tscn" id="1_xshbx"]
+[ext_resource type="PackedScene" uid="uid://ch8pb4urrr1vc" path="res://launcher.tscn" id="2_uqvod"]
+[ext_resource type="PackedScene" uid="uid://b6qc48apgjlp2" path="res://line.tscn" id="3_ywrt4"]
+[ext_resource type="PackedScene" uid="uid://efcmsbqcv7oy" path="res://element-plus1.tscn" id="4_trgl3"]
+[ext_resource type="PackedScene" uid="uid://dksl8faj2l0tc" path="res://element_target.tscn" id="5_h0sx1"]
+[ext_resource type="PackedScene" uid="uid://dfjq0ivgx6v18" path="res://element-plus-toggle.tscn" id="6_r4vv4"]
+
+[node name="Level" type="Node2D"]
+
+[node name="Level" parent="." instance=ExtResource("1_xshbx")]
+next_level = "res://levels/level4.tscn"
+
+[node name="Launcher" parent="." instance=ExtResource("2_uqvod")]
+position = Vector2(400, 200)
+
+[node name="Line" parent="." instance=ExtResource("3_ywrt4")]
+position = Vector2(200, 540)
+max_num = 3
+
+[node name="Element-plus1" parent="Line" instance=ExtResource("4_trgl3")]
+position = Vector2(2, -1)
+
+[node name="ElementTarget" parent="Line" instance=ExtResource("5_h0sx1")]
+position = Vector2(300, -2)
+
+[node name="Element-plus2" parent="Line" instance=ExtResource("6_r4vv4")]
+position = Vector2(202, -3)
+offsets = Array[int]([-1, 1])

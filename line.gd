@@ -72,7 +72,13 @@ func move_element(pos: int, to: int) -> void:
 	elements[to] = elements[pos]
 	elements[to].index = to
 	elements[to].number = min_num + to
-	elements[to].global_position = global_position + Vector2(stride, 0) * to
+
+	var tw := get_tree().create_tween()
+	tw.tween_property(
+		elements[to], "global_position", global_position + Vector2(stride, 0) * to, 0.1
+	).set_ease(Tween.EASE_IN_OUT);
+	tw.play();
+
 	elements[pos] = null
 	
 	get_tree().call_group("movers", "refresh")
