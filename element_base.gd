@@ -15,7 +15,7 @@ var index: int
 func _ready() -> void:
 	body_entered.connect(_on_body_entered)
 
-func _on_ball_enter(ball: Creature):
+func _on_ball_enter(_ball: Creature):
 	pass
 
 func _on_body_entered(body: Node2D):

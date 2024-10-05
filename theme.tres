@@ -1,6 +1,10 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://cahi3i7q4ygis"]
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://cahi3i7q4ygis"]
 
 [ext_resource type="FontFile" uid="uid://b0yqnpavbkahk" path="res://fonts/Roboto-Bold.ttf" id="1_7vdm2"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l54j6"]
+
 [resource]
 default_font = ExtResource("1_7vdm2")
+Button/styles/focus = SubResource("StyleBoxEmpty_l54j6")
+Button/styles/pressed = null

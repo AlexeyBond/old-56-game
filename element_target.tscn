@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://dksl8faj2l0tc"]
+
+[ext_resource type="Script" path="res://element_target.gd" id="1_tkkf3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jmrvb"]
+size = Vector2(45, 46)
+
+[node name="ElementTarget" type="Area2D" groups=["resettable", "targets"]]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_tkkf3")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(0, -21)
+color = Color(0.874072, 0, 0.135921, 1)
+antialiased = true
+polygon = PackedVector2Array(-23, -48, -15, 0, 15, 0, 23, -48)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -44)
+shape = SubResource("RectangleShape2D_jmrvb")

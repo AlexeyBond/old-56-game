@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://element_mover.gd" id="1_vhp44"]
 [ext_resource type="Theme" uid="uid://cahi3i7q4ygis" path="res://theme.tres" id="2_s3iks"]
 
-[node name="ElementMover" type="Node2D" groups=["movers"]]
+[node name="ElementMover" type="Node2D" groups=["controls", "movers"]]
 script = ExtResource("1_vhp44")
 
 [node name="Right" type="Button" parent="."]

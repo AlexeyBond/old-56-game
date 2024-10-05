@@ -8,7 +8,7 @@ var capacity: int = 1
 var interval: float = 1.0
 
 @export
-var spacing: float = 10.0
+var spacing: float = 20.0
 
 var creature_scn := preload("res://creature.tscn")
 
@@ -18,39 +18,52 @@ var starting: int = 0
 
 func _ready() -> void:
 	for i in range(capacity):
-		var creature = creature_scn.instantiate()
-		creature.position = Vector2(0, i * spacing)
+		var creature: Creature = creature_scn.instantiate()
+		creature.position = -Vector2(0, i * spacing)
+		creature.index = i
 		creatures.push_back(creature)
+		creature.finished.connect(_on_one_finished)
 		add_child(creature)
+	reset()
 	add_to_group("Launchers")
 
-func reset_all():
-	for i in range(creatures.size()):
-		creatures[i].reset()
-	
-	$Timer.stop()
-	starting = 0
+func _on_one_finished() -> void:
+	for c in creatures:
+		if not c.is_finished:
+			return
+	reset()
 
 func _start_one():
+	just_reset = false
 	creatures[starting].start_fall()
 	starting += 1
-	
+
 	if starting < creatures.size():
 		$Timer.start(interval)
 		$Timer.one_shot = true
 
 func start():
-	reset_all()
+	reset()
 	_start_one()
 
-func reset():
-	reset_all()
-	$Button.disabled = false
+var just_reset: bool = false
 
+func reset():
+	if just_reset:
+		return
+
+	for creature in creatures:
+		creature.reset()
+
+	$Timer.stop()
+	starting = 0
+	just_reset = true
+
+	$Button.disabled = false
 
 func _on_button_pressed() -> void:
 	start()
-	#$Button.disabled = true
+	$Button.disabled = true
 
 
 func _on_timer_timeout() -> void:
