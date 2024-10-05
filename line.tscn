@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6qc48apgjlp2"]
+
+[ext_resource type="Script" path="res://line.gd" id="1_p0c6n"]
+
+[node name="Line" type="Node2D"]
+script = ExtResource("1_p0c6n")
+min_num = 0
+max_num = 2
+color = null

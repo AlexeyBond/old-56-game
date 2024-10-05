@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://efcmsbqcv7oy"]
+
+[ext_resource type="Script" path="res://element_base.gd" id="1_3idr4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_52fqf"]
+
+[node name="Element-plus1" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_3idr4")
+text = "+1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_52fqf")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -33.0
+offset_right = 33.0
+offset_bottom = 23.0
+text = "+1"
+horizontal_alignment = 1
