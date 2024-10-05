@@ -16,7 +16,7 @@ func _recreate_tween() -> void:
 func start_fall():
 	_recreate_tween()
 	tw.tween_property(
-		self, "global_position", global_position + Vector2(0, 1000), 5
+		self, "global_position", global_position + Vector2(0, 1000), 2
 	).set_ease(Tween.EASE_IN)
 	tw.play()
 

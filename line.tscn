@@ -1,9 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://b6qc48apgjlp2"]
+[gd_scene load_steps=3 format=3 uid="uid://b6qc48apgjlp2"]
 
 [ext_resource type="Script" path="res://line.gd" id="1_p0c6n"]
+[ext_resource type="FontFile" uid="uid://b0yqnpavbkahk" path="res://fonts/Roboto-Bold.ttf" id="2_v3had"]
 
 [node name="Line" type="Node2D"]
 script = ExtResource("1_p0c6n")
 min_num = 0
 max_num = 2
-color = null
+color = Color(0.662452, 0.662452, 0.662452, 1)
+font = ExtResource("2_v3had")

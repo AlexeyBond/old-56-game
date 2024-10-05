@@ -7,16 +7,17 @@
 [node name="Test" type="Node2D"]
 
 [node name="Launcher" parent="." instance=ExtResource("1_ji06q")]
-position = Vector2(175, 72)
-
-[node name="Element-plus1" parent="." instance=ExtResource("2_uvgta")]
-position = Vector2(175, 249)
-
-[node name="Element-plus2" parent="." instance=ExtResource("2_uvgta")]
-position = Vector2(256, 249)
-offset = -1
-text = "-1"
+position = Vector2(433, 309)
+capacity = 2
 
 [node name="Line" parent="." instance=ExtResource("3_iuc8g")]
-position = Vector2(99, 280)
-color = null
+position = Vector2(437, 560)
+stride = 200.0
+
+[node name="Element-plus1" parent="Line" instance=ExtResource("2_uvgta")]
+position = Vector2(-33, 7)
+
+[node name="Element-plus2" parent="Line" instance=ExtResource("2_uvgta")]
+position = Vector2(228, -21)
+offset = -1
+text = "-1"
