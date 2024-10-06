@@ -9,10 +9,10 @@ script = ExtResource("1_vhp44")
 [node name="Right" type="Button" parent="."]
 offset_top = 48.0
 offset_right = 53.0
-offset_bottom = 102.0
+offset_bottom = 103.0
 theme = ExtResource("2_s3iks")
 theme_override_font_sizes/font_size = 32
-text = ">"
+text = "▶"
 
 [node name="Left" type="Button" parent="."]
 anchors_preset = 1
@@ -24,7 +24,7 @@ offset_bottom = 103.0
 grow_horizontal = 0
 theme = ExtResource("2_s3iks")
 theme_override_font_sizes/font_size = 32
-text = "<"
+text = "◀"
 
 [connection signal="pressed" from="Right" to="." method="_on_right_pressed"]
 [connection signal="pressed" from="Left" to="." method="_on_left_pressed"]

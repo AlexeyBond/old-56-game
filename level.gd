@@ -46,3 +46,11 @@ func _ready() -> void:
 
 func end() -> void:
 	get_tree().change_scene_to_file(next_level)
+
+
+func _on_restart_level_button_pressed() -> void:
+	get_tree().reload_current_scene()
+
+
+func _on_restart_all_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://levels/level0.tscn")

@@ -1,10 +1,18 @@
-[gd_resource type="Theme" load_steps=3 format=3 uid="uid://cahi3i7q4ygis"]
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://cahi3i7q4ygis"]
 
 [ext_resource type="FontFile" uid="uid://b0yqnpavbkahk" path="res://fonts/Roboto-Bold.ttf" id="1_7vdm2"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l54j6"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_embrl"]
+bg_color = Color(0.266575, 0.266575, 0.266575, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
 [resource]
 default_font = ExtResource("1_7vdm2")
 Button/styles/focus = SubResource("StyleBoxEmpty_l54j6")
+Button/styles/normal = SubResource("StyleBoxFlat_embrl")
 Button/styles/pressed = null

@@ -17,8 +17,8 @@ func refresh() -> void:
 		hide()
 		return
 
-	$Left.disabled = not element.line.has_free_position(element.index - 1)
-	$Right.disabled = not element.line.has_free_position(element.index + 1)
+	$Left.visible = element.line.has_free_position(element.index - 1)
+	$Right.visible = element.line.has_free_position(element.index + 1)
 	show()
 
 signal interacted

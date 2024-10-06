@@ -12,7 +12,7 @@ offset_top = 64.0
 offset_right = 23.0
 offset_bottom = 95.0
 theme = ExtResource("2_1buya")
-text = "V"
+text = "▼"
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true

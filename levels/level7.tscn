@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://bxh4lg4ai7fsn"]
+
+[ext_resource type="PackedScene" uid="uid://c5y8xtt503vkd" path="res://level.tscn" id="1_gi51d"]
+[ext_resource type="PackedScene" uid="uid://ch8pb4urrr1vc" path="res://launcher.tscn" id="2_krqc3"]
+[ext_resource type="PackedScene" uid="uid://b6qc48apgjlp2" path="res://line.tscn" id="3_cj2fl"]
+[ext_resource type="PackedScene" uid="uid://efcmsbqcv7oy" path="res://element-plus1.tscn" id="4_goons"]
+[ext_resource type="PackedScene" uid="uid://dksl8faj2l0tc" path="res://element_target.tscn" id="5_xuojc"]
+[ext_resource type="PackedScene" uid="uid://dfjq0ivgx6v18" path="res://element-plus-toggle.tscn" id="6_3im11"]
+
+[node name="Level" type="Node2D"]
+
+[node name="Level" parent="." instance=ExtResource("1_gi51d")]
+next_level = "res://levels/level8.tscn"
+
+[node name="Launcher" parent="." instance=ExtResource("2_krqc3")]
+position = Vector2(300, 200)
+
+[node name="Line" parent="." instance=ExtResource("3_cj2fl")]
+position = Vector2(200, 540)
+max_num = 14
+
+[node name="Element-plus3" parent="Line" instance=ExtResource("4_goons")]
+position = Vector2(501, 0)
+
+[node name="Element-plus9" parent="Line" instance=ExtResource("4_goons")]
+position = Vector2(1299, -6)
+
+[node name="Element-plus4" parent="Line" instance=ExtResource("4_goons")]
+position = Vector2(-1, 0)
+offset = 3
+
+[node name="ElementTarget2" parent="Line" instance=ExtResource("5_xuojc")]
+position = Vector2(1402, -1)
+
+[node name="Element-plus5" parent="Line" instance=ExtResource("6_3im11")]
+position = Vector2(101, -1)
+offsets = Array[int]([-3, 3])
+
+[node name="Element-plus6" parent="Line" instance=ExtResource("6_3im11")]
+position = Vector2(401, 0)
+offsets = Array[int]([-3, 3])
+
+[node name="Element-plus7" parent="Line" instance=ExtResource("6_3im11")]
+position = Vector2(699, -1)
+offsets = Array[int]([-4, 3])
+
+[node name="Element-plus8" parent="Line" instance=ExtResource("6_3im11")]
+position = Vector2(1002, 2)
+offsets = Array[int]([-3, 3])

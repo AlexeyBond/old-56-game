@@ -130,7 +130,29 @@ grow_vertical = 0
 text = "lv#####	"
 horizontal_alignment = 2
 
+[node name="restartLevelButton" type="Button" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -103.0
+offset_bottom = 27.0
+grow_horizontal = 0
+text = "Restart Level"
+
+[node name="restartAllButton" type="Button" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -103.0
+offset_top = 29.0
+offset_bottom = 56.0
+grow_horizontal = 0
+text = "Restart All"
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_wmyn5")
 }
+
+[connection signal="pressed" from="CanvasLayer/restartLevelButton" to="." method="_on_restart_level_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/restartAllButton" to="." method="_on_restart_all_button_pressed"]

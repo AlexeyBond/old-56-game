@@ -14,10 +14,10 @@ func _kill_tween() -> void:
 		tw.kill()
 		tw = null
 
-func _recreate_tween(connect: bool = true) -> void:
+func _recreate_tween(do_connect: bool = true) -> void:
 	_kill_tween()
 	tw = get_tree().create_tween()
-	if connect:
+	if do_connect:
 		tw.finished.connect(_on_finished)
 
 func start_fall():
